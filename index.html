@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(back.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+nav img{
+    width: 60px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.call_btn{
+    color: white;
+    background-color: red;
+    padding: 5px 5px 5px 5px;
+    border-style: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.call_btn:hover{
+    background-color: green;
+}
+.nav-links ul li a::after{
+content: '';
+width: 0%;
+height: 2px;
+background-color: aliceblue;
+display: block;
+margin: auto;
+transition: 0.5s;
+}
+.nav-links ul li a:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color:white ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+.text-box button{
+    color: white; 
+    background-color: red;
+    padding: 5px 15px 5px 15px;
+    border-style: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.text-box button:hover{
+    background-color: green;
+}
+nav .fa{
+    display: none;
+
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.roww{
+    margin-top: 5%;
+    /* display: flex; */
+    justify-content: space-between;
+
+}
+
+/* services */
+
+.services{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top:100px;
+}
+.services-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom:5%;
+    text-align: left;
+}
+.services-col img{
+    width: 100%;
+     border-radius: 10px;
+}
+.badge-col img{
+ width : 40%;
+ border-radius : 10px;
+ }
+.services-col p{
+    padding: 0;
+}
+.services-col h3{
+    margin-top:16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+/* media query */
+@media(max-width:700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background-color: rgb(46, 76, 104);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding-top: 20px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .action{
+        display: block;
+    }
+    .fab{
+        display: block;
+    }
+    #captchaTxtArea{
+        width: 30%;
+        text-align: center;
+        border-style: none;
+        border-radius: 5px;
+    }
+    #CaptchaEnter{
+        width: 60%;
+        text-align: center;
+    }
+}
+
+#captchaTxtArea{
+     width: 30%; 
+    text-align: center;
+}
+
+/* call to action */
+
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(ac.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: white;
+    margin-bottom: 40px;
+    padding: 0;
+}
+.cta button{
+    color: white;
+    background-color: red;
+    padding: 5px 15px 5px 15px;
+    border-style: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.cta button:hover{
+    background-color: green;
+}
+
+
+/* Testimonial */
+
+.testimonial{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.test-col{
+    flex-basis: 31%;
+    background-color: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;    
+}
+.test-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+
+/* about us */
+
+.about{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.about-col{
+    flex-basis: 48%;
+    border-radius: 10px;
+    margin-bottom:5%;
+    text-align: left;
+}
+@media(min-width:700px){
+    .roww{
+        display:flex;
+    }
+}
+
+
+/* footer */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.rowf{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links img{
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	/* background-color: rgba(255,255,255,0.2); */
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+/* drop down */
+
+.dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px 0px 0px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    position: relative;
+  }
+  .dropbtn:hover .dropdown-content {
+      display: block;
+  }
+  
+  
+  
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      margin-left: 0%;
+    }
+    
+    .dropdown-content a {
+      float: none;
+      color: rgb(184, 38, 38);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+#drop{
+    display: block;
+}
+
+#drop{
+    float: right;
+    margin-left:10px;
+    margin-top: 3px;
+}
+.dropbtn::after{
+    content: '';
+    width:0%;
+    height: 3px;
+    background: whitesmoke;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.dropbtn:hover::after{
+    width:100%;
+}
+
+/* up icon*/
+
+.fabs {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .action {
+    background: rgb(255, 0, 128);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 7px 0px gray;
+    transition: background-color 0.4s ease-in-out;
+  }
+  
+  .action i {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 30;
+  }
+  
+  .actionn {
+    background: green;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 7px 0px gray;
+    transition: background-color 0.4s ease-in-out;
+    display: block;
+  }
+  
+  .actionn i {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .actionn:hover {
+    background-color: rgb(227, 26, 26);
+  }
+  #call_icon{
+      display: block;
+  }
+  
+
+  /* popup */
+  
+  .popup{
+    width: 90%;
+    height: 90%;
+    background-color: #f3e9ec;
+    position: fixed;
+    overflow-y: scroll;
+    left: 5%;
+    top:5%;
+    z-index: 10;
+    text-align: center;
+    border-radius: 10px;
+
+}
+.popup h3{
+  color: rgb(232, 193, 193);
+ 
+  border-radius: 10px 10px 0px 0px;
+
+  
+}
+#cut{
+    color: rgb(186, 186, 186);
+    margin-top: 10px;
+}
+
+.popup form{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    left:10% ;
+    padding-top: 30px;
+}
+.topp{
+    background-color: #e91e63;
+    width: 100%;
+    text-align: center;
+    display:grid;
+    grid-template-columns: 80% 20%;
+    border-radius: 10px 10px 0px 0px;
+    
+
+    
+}
+.mb-1{
+    margin-top: 20px;
+}
+form textarea{
+    margin-top: 20px;
+}
+
+/* captcha */
+.call-btn{
+    color: white;
+    background-color: red;
+    padding: 5px 15px 5px 15px;
+    border-style: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.call-btn:hover{
+ background-color: green;
+}
+
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teach Team</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <section class="header" id="header">
+
+        <nav>
+        <div style="width: 40px; height: 40px; border-radius: 60%; overflow: hidden;">
+        <img src="https://graph.org/file/37536333232ed70658836.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+         <!--   <a href=""><img src="https://graph.org/file/37536333232ed70658836.jpg" alt=""></a> -->
+            <div class="nav-links" id="pannel">
+                <i class="fa fa-times" onclick="hide()"></i>
+
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+
+                    <li> <button class="dropbtn">Skills
+                            <i class="fa fa-caret-down" id="drop"></i>
+                            <div class="dropdown-content">
+                                <a href="#WebDev" style="color: black;" onclick="hide()">Web Dev</a>
+                                <a href="#C" style="color: black;" onclick="hide()">Language</a>
+                                <a href="#Botdev" style="color: black;" onclick="hide()">Bot Making</a>
+                             <!--   <a href="#" style="color: black;" onclick="hide()"></a> -->
+                                <a href="#content" style="color: black;" onclick="hide()">Content Creator</a>
+
+                            </div>
+                        </button></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="social.html">Social Media</a></li>
+                    <li><button class="call_btn" onclick="window.open('https://youtube.com/@pvtTeachteam?si=TYDsLtIZzVLua0K2')">SUBSCRIBE</button></li>
+
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="show()"></i>
+
+        </nav>
+
+        <div class="text-box">
+            <h1>Welcome To Teach Team!</h1>
+            <p>Navigating Teach Team is a breeze. Discover a seamless and enjoyable experience as you explore our pages.</p>
+            <button onclick="window.open('https://youtube.com/@pvtTeachteam?si=TYDsLtIZzVLua0K2')"> Subscribe 🔔 </button>
+        </div>
+    </section>
+
+    <!-- About us -->
+    <section class="about" id="about">
+        <h1>About Us</h1>
+        <p>Who are we?</p>
+        <div class="roww">
+            <div class="about-col">
+                <img src="https://graph.org/file/37536333232ed70658836.jpg" alt="" width="100%" height="100%" style="border-radius: 10px;">
+            </div>
+            <div class="about-col">
+                <p> Hii I'm Shivay <br>I am a <span style="color:#f9532d;">web developer and content creator.</span> Our main goal is to help and satisfy local and global customers by web development solution and help full technology videos.</p>
+            </div>
+        </div>
+    </section>
+    <!-- About us end -->
+
+
+
+    <!-- services -->
+    <section class="services" id="Skills">
+        <h1>Skills</h1>
+        <p>This is what we are expert in. </p>
+        <div class="row">
+            <div class="services-col" id="WebDev">
+                <img src="https://graph.org/file/544ab4b6c2ddf299ed9c8.jpg" alt="">
+                <h3>Web Developer</h3>
+                <p>🚀 Tech Enthusiast | Transforming ideas into digital realities. Embracing the latest web technologies and pushing boundaries. Let's ride the wave of innovation! 💡💻</p> 
+
+            </div>
+            <div class="services-col" id="Botdev">
+                <img src="https://graph.org/file/165af3b8f39cbc078dd10.jpg" alt="">
+                <h3>Bot Developer</h3>
+                <p>Tech enthusiast on a mission to redefine user experiences through bot development. Expertise in algorithms, NLP, and API integration. Turning lines of code into seamless conversations. 💻🗣️</p>
+                   
+
+            </div>
+            <div class="badge-col" id="C">
+                <img src="" alt="">
+                <h3>Languages</h3>
+                <img  src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" style="margin-bottom: 10px;" height="30px">
+                <img src="https://img.shields.io/badge/C%2B%2B-900C3F?style=for-the-badge&logo=c%2B%2B&logoColor=white" style="margin-bottom:4px;" height="30px">
+                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" style="margin-bottom: 10px;" height="30px">
+                <p>My favorite languages for systems programming, software engineering, and data analysis.</p>
+   
+            </div>
+            
+            <div class="badge-col" id="C">
+            <img src="" alt="">
+            <h3>Front-End</h3>
+            <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" style="margin-bottom: 4px;" width="100%" height="30px">
+            <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" style="margin-bottom: 4px;" height="30px">
+             <p>My preferred technologies for front-end web development and component design.</p>
+               </div>
+        </div>
+        <div class="badge-col" id="C">
+        <img src="" alt="">
+        <h3>Tools</h3>
+        <img src="https://img.shields.io/badge/Github-black.svg?style=for-the-badge&logo=github&logoColor=white" style="margin-bottom: 4px;" width="100%" height="30px">
+        <img src="https://img.shields.io/badge/heroku-blue.svg?style=for-the-badge&logo=heroku&logoColor=white" style="margin-bottom: 4px;" height="30px">
+        <img src="https://img.shields.io/badge/git-FF5733?style=for-the-badge&logo=git&logoColor=white" style="margin-bottom:4px;" height="30px">
+        <img src="https://img.shields.io/badge/vscode-00758f?style=for-the-badge&logo=vs&logoColor=white" style="margin-bottom:4px;" height="30px">
+        <p>My favorite tools for version control, code editing, and container orchestration.</p>
+       </div>
+        </div>
+        <div class="row">
+            <div class="services-col" id="content">
+                <img src="https://graph.org/file/0cc66e144e6ba88a810f6.jpg" alt="">
+                <h3>Content Creators</h3>
+                <p>Social Media Alchemist | Turning words into engagement and moments into memories. Join the community for a daily dose of positivity, humor, and lifestyle inspiration. Let's create together!</p>
+                     
+
+            </div>
+        </div> 
+    </section>
+    <!-- services end -->
+
+
+    <!-- call to action -->
+    <section class="cta">
+        <h1> Subscribe To Our YouTube Channel And Stay Updated With Our Channel </h1>
+        <button onclick="window.open('https://youtube.com/@pvtTeachteam?si=TYDsLtIZzVLua0K2')"> Subscribe🔔 </button>
+    </section>
+
+    <!-- call to action end -->
+
+
+
+    <!-- testimonial -->
+<!--    <section class="testimonial">
+        <h1>Testimonial</h1>
+        <p>Our client's Feedback</p>
+
+        <div class="row">
+            <div class="test-col">
+                <h3>Rahul Saroj</h3>
+                <p></p>
+            </div>
+            <div class="test-col">
+                <h3>Manan Uplekar</h3>
+                <p>Excelence Work experiance is easily visible in their work and its important to add that Teams are
+                    so polite.</p>
+            </div>
+            <div class="test-col">
+                <h3>Suraj Ratnakar</h3>
+                <p>Believe me it was a good call to get this service ,very affordable i got repaired my washing Machine
+                    and oven too.I will definitely tell go for it.</p>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial end -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="rowf">
+                <div class="footer-col">
+                    <h4>links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#Skills">Skills</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="social.html">Social Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Experties</h4>
+                    <ul>
+                        <li><a href="#WebDev">Web Developer</a></li>
+                        <li><a href="#Botdev">Bot Developer</a></li>
+                        <li><a href="#C">Language</a></li>
+                        
+                        <li><a href="#content">Content Creators</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#">Contact On <br><br>Telegram username : @Botsexpert <br><br>Instagram username: @cyber.teachteam <br><br>
+                        Email</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+
+                    <div class="social-links">
+                        <a href="#"><i><img src="https://graph.org/file/37536333232ed70658836.jpg" alt=""></i></a>
+                        <li style="font-size: 11px; color: rgb(180, 178, 176); list-style: none;">©copyright.All Rights
+                            Reserved</li>
+                        <li style="font-size: 11px; color: rgb(180, 178, 176); list-style: none;">Disclaimer: we are not
+                            in partnership or tie up with any of the company,we are purely independent.</li>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!-- footer end -->
+
+
+</body>
+<a href="#header">
+    <div class="fabs">
+        <div class="action">
+            <i class="fa fa-caret-up" id="up" style="display: block;"></i>
+
+
+        </div><a>
+            <div class="fab" onclick="window.open('https://t.me/itsteachteam')">
+                <div class="actionn">
+                    <i class="fa fa-phone" id="call_icon" style="display: block;"></i>
+
+
+                </div>
+
+
+</html>
+
+
+
+
+<script>
+    function show() {
+        document.getElementById("pannel").style.right = "0";
+    }
+    function hide() {
+        document.getElementById("pannel").style.right = "-200px";
+    }
+    function hidepop() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+
+    var captcha, chars;
+
+    function genNewCaptcha() {
+        chars = "123456789098765432314516171819784563457863438923028467463829";
+        captcha = chars[Math.floor(Math.random() * chars.length)];
+        for (var i = 0; i < 4; i++) {
+            captcha = captcha + chars[Math.floor(Math.random() * chars.length)];
+        }
+        captchaTxtArea.value = captcha;
+    }
+    window.onload = genNewCaptcha();
+
+    function checkCaptcha() {
+        var check = document.getElementById("CaptchaEnter").value;
+        if (captcha == check) {
+            alert("Valid Captcha!!! Success");
+            document.getElementById("CaptchaEnter").value = "";
+        } else {
+            alert("InValid Captcha!!! Please Try Again");
+            document.getElementById("CaptchaEnter").value = "";
+        }
+
+        genNewCaptcha();
+    }
+
+    // email
+
+    function alll() {
+        alert("successfull");
+    }
+
+
+
+  </script>
