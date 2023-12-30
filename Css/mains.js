@@ -1,4 +1,3 @@
-<script>
 ! function(t) {
     var e = {};
 
@@ -5163,4 +5162,3 @@ function Ti(t, e) {
         t.exports = n
     }
 });
-</script>
